@@ -18,20 +18,21 @@ for i in range(1, 2): #number of pages
         Nr = count
         Product = product.h3.text
         Price = product.find('span', class_='s-item__price').text
-        Location = product.find('span', class_='s-item__location s-item__itemLocation')
+        Location = getattr(product.find('span', class_='s-item__location s-item__itemLocation'), 'text', None)
+
         if Location is None:
             print('element not found')
         else:
-            print(Location.text)
-        Quality = product.find('span', class_='SECONDARY_INFO')
+            print(Location)
+        Quality = getattr(product.find('span', class_='SECONDARY_INFO'), 'text', None)
         if Quality is None:
             print('element not found')
         else:
-            print(Quality.text)
+            print(Quality)
         
         print(product.text)
         #Shipping
-'''''    
+   
         df = df.append(
             {'Nr': count, 
              'Product': Product, 
@@ -44,6 +45,4 @@ for i in range(1, 2): #number of pages
         
 df.to_csv('out.csv', encoding='utf-8', index=False, sep=';', columns=columns)
 print(df)
-'''
 
-asasdaSdASdasdasdasdadsad
