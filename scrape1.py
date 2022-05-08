@@ -18,28 +18,11 @@ for i in range(1, 5): # cia keiciam puslapiu kieki kiek scrapinam
         Nr = count
         Product = product.h3.text
         Price = product.find('span', class_='s-item__price').text
-<<<<<<< Updated upstream
-        Location = product.find('span', class_='s-item__location s-item__itemLocation')
-        if Location is None:
-            print('element not found')
-        else:
-            print(Location.text)
-        Quality = product.find('span', class_='SECONDARY_INFO')
-        if Quality is None:
-            print('element not found')
-        else:
-            print(Quality.text)
-        
-        print(product.text)
-        #Shipping
-'''''    
-=======
         Location = getattr(product.find('span', class_='s-item__location s-item__itemLocation'), 'text', None)
         Quality = getattr(product.find('span', class_='SECONDARY_INFO'), 'text', None)
         #pridedant nauja collum, apsirasom cia
         
    
->>>>>>> Stashed changes
         df = df.append(
             {'Nr': count, 
              'Product': Product, 
@@ -52,5 +35,5 @@ for i in range(1, 5): # cia keiciam puslapiu kieki kiek scrapinam
         
 df.to_csv('out.csv', encoding='utf-8', index=False, sep=';', columns=columns)
 print(df)
-'''
+
 
