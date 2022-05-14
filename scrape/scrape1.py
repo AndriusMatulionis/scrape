@@ -46,3 +46,6 @@ for i in range(1, 2): #number of pages
 df.to_csv('out.csv', encoding='utf-8', index=False, sep=';', columns=columns)
 print(df)
 
+
+def hello_world():
+    return "Hello wworld"
