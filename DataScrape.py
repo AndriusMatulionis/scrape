@@ -9,7 +9,7 @@ df = pd.DataFrame(columns=['Nr', 'Product', 'Price'])
 
 
 for i in range(1, 20): #number of pages
-    url = 'https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313&_nkw='+product_type+'&_pgn='+str(i)+''
+    url = 'https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313&_nkw='+product_type+'&_pgn={0}'
     data = requests.get(url).text
     soup = BeautifulSoup(data, 'html.parser')
     products = soup.find_all('div', class_='s-item__info clearfix')
