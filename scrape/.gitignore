@@ -1,0 +1,9 @@
+*.pyc
+/.idea/
+/.pytest_cache/
+/venv/
+/db.sqlite3
+*.csv
+/.vscode/
+/env/
+.gitattributes
